@@ -45,7 +45,6 @@ let staffRecords = [
                 setTimeout(() => {
                     signIn.classList.add('d-none');
                 }, 1000);
-                staffMembers[p] = staffData;
                 staffMembers.push(staffData);
                 console.log(staffMembers);
             }
