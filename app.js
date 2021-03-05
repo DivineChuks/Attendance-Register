@@ -4,22 +4,26 @@ let staffRecords = [
         {
             id: 1, 
             name: "Divine",
-            position: "Manager",
-            day: 1
+            position: "Manager"
             
         },
         {
             id: 2, 
             name: "Prince",
-            position: "Senior Developer",
-            day: 1 
+            position: "Senior Developer"
             
         },
         {
             id: 3, 
             name: "Chamberlain",
-            position: "Junior Deloper",
-            day: 0 
+            position: "Junior Deloper"
+            
+        },
+        {
+            id: 4, 
+            name: "Dennis",
+            position: "Senior Deloper"
+
             
         }
     ]
@@ -34,7 +38,6 @@ let staffRecords = [
                     id: newStaff,
                     name: staffRecords[p].name,
                     position: staffRecords[p].position,
-                    days : +staffRecords[p].day + 1,
                     date : staffRecords[p].date = date  
      
                 }
@@ -50,22 +53,18 @@ let staffRecords = [
      }
      
           function checkPayment(){
-            let customerId = document.getElementById("checkPay").value
-            let danger = document.getElementById("danger")
-            let success = document.getElementById("success")
-            let info = document.getElementById("info")
-            if(customerId == "") {
-                alert("Please enter your ID")
-            }
-            for (let p = 0; p < staffRecords.length; p++) {
 
-                if (customerId == staffRecords[p].id && staffRecords[p].days >= 4 ) {
-                     success.classList.remove('d-none')
-                    success.innerHTML =  `dear ${staffMembers[p].name} you can withdraw` 
-                    }else{
-                        info.classList.remove('d-none')
-                        info.innerHTML = `This customer ID cannot withdraw`
-                        success.classList.add('d-none')
-                    }
+            let customerId = document.getElementById("checkPay").value;
+            let days = 0
+            for(let tdays = 0; tdays < staffMembers.length; tdays++){
+                if(staffMembers[tdays].id == customerId){
+                    days +=1
                 }
             }
+            if (days >=4){
+                alert("You can receive payment")
+                
+            }else{
+                alert("No payment")
+            }
+     }
