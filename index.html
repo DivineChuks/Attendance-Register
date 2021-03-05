@@ -25,7 +25,12 @@
 </head>
 <body class="bg-primary">
 
-
+  <div class="container text-center" style="color: white;">
+    <h2>M&T EXCLUSIVES</h2>
+    <div class="alert alert-info w-50 text-center mx-auto d-none" role="alert" id="signIn">
+      successfully 
+    </div>
+  </div>
         <section class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-3">
@@ -58,13 +63,16 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <form class="form-container2">
                         <div class="form-group">
-                          <label for="email">Customer Id:</label>
-                          <input type="email" class="form-control" id="staffId">
+                          <label for="text">Customer Id:</label>
+                          <input type="text" class="form-control" id="checkPay">
                         </div>
-                        <button type="button" class="btn btn-primary btn-block" onclick="staffShow()">Pay User</button>
+                        <button type="button" class="btn btn-primary btn-block" onclick="checkPayment()">Pay User</button>
                       </form>
                 </div>
-            </div>   
+            </div> 
+            <div class="alert alert-success d-none" id="success"></div>
+            <div class="alert alert-info d-none" id="info"></div>
+            <div class="alert alert-danger d-none" id="danger">invalid Id</div>  
         </section>
         <script src="app.js"></script>
 </body>
